@@ -84,6 +84,8 @@ namespace dotnetapp.Controllers
                 Name = d.Name, Age = d.Age, Category = d.Category, BiddingPrice = d.BiddingPrice};
                 return Ok(data);
         }
+
+        
  
     }
 }

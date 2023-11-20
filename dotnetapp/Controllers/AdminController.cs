@@ -124,5 +124,11 @@ namespace dotnetapp.Controllers
  
            
         }
+        public IActionResult GetPlayers(int id){
+
+            return Ok();
+
+            
+        }
     }
 }
