@@ -12,13 +12,13 @@ export class TeamService {
 
   constructor(private httpclient : HttpClient) { }
 
-  getAllTeams() : Observable<any[]>{
-    return this.httpclient.get<any[]>(this.url +'/ListTeam');
+  getAllTeams() : Observable<Iteam[]>{
+    return this.httpclient.get<Iteam[]>(this.url +'/ListTeam');
   }
 
   getTeam(id : number) : Observable<Iteam>{
     return this.httpclient.get<Iteam>(this.url + '/ListTeam' +id);
   }
-  
+
 
 }

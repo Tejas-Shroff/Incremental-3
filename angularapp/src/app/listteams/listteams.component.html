@@ -4,14 +4,20 @@
     <div class="jumbotron">
         <table class="table">
             <thead>
-                <th>Id</th>
+                <th>TeamId</th>
+                <th>TeamName</th>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let t of teamsdata>
                     <td>
-                        {{listteams.Id}}
+                        {{t.teamId}}
+                    </td>
+                    <td>
+                        {{t.teamName}}
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+</div>
+
