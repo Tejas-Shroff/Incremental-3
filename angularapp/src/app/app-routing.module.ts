@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListteamsComponent } from './listteams/listteams.component';
 
-const routes: Routes = [
-  {path : 'ListTeam' ,component :ListteamsComponent}
-];
+
+const routes: Routes = []
+;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
