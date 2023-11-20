@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
 
-  private url = 'https://8080-eccdeabbadafaabfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/admin';
+  private url = 'https://8080-eccdeabbadafaabfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin';
 
   constructor(private httpclient : HttpClient) { }
 }
