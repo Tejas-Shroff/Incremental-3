@@ -1,0 +1,30 @@
+<p>addteam works!</p>
+
+<h1>Adding teams</h1>
+
+<hr>
+<form (ngSubmit) = "saveData(teamdata)" #teamform ="ngForm">
+    <div>
+        <label for = "teamId"> team Id </label>
+        <input type ="text" id ="teamId" name = "teamId" placeholder = "Enter teamId" [(ngModel)] = "teamdata.TeamId"
+        required #TeamId = "ngModel">
+    </div>
+ 
+
+    <div>
+        <label for = "teamName"> player name </label>
+        <input type ="text" id ="teamName" name = "teamName" placeholder = "Enter team name" [(ngModel)] = "teamdata.TeamName"
+        required #TeamName = "ngModel">
+    </div>
+
+ 
+
+   
+    <br>
+    <br>
+    <p>
+        <input type = "submit" value = "save" class = "btn btn-Success" [disabled] = "!teamform.valid">
+    </p>
+
+
+</form>

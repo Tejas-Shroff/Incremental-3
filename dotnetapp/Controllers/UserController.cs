@@ -1,10 +1,12 @@
 ﻿
-
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using dotnetapp.Models;
+ 
  
 namespace dotnetapp.Controllers
 {
@@ -19,26 +21,24 @@ namespace dotnetapp.Controllers
             context = _context;
         }
  
-        [HttpGet]
- 
-        [Route("ListTeam")]
-        public IActionResult Get()
+        public IActionResult Register(User u)
         {
-            var data=from m in context.Teams select m;
-            return Ok(data);
+            context.Users.Add(u);
+            context.SaveChanges();
+            return RedirectToAction("Login");
+ 
+           
+ 
         }
- 
-        [HttpPost]
-        [Route("UserLogin")]
- 
-        public IActionResult Login() {
+        public IActionResult Login(User U)
+        {
+            if(ModelState.IsValid)
+            {
+                var user=context.Users.FirstOrDefault(u=>u.Name==U.Name && u.password==U.password);
+                return Ok();
+            }
             return Ok();
-        }
- 
-        [HttpPost]
-        [Route("UserRegister")]
-        public IActionResult Register() {
-            return Ok();
+           
         }
  
  

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../services/admin.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-player',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+  playerdata : any[] = []
+
+  constructor(private ad : AdminService) { 
+
+    this.ad.showPLayer().subscribe(data => { this.playerdata.push(...data)})
+    console.log(this.playerdata);
+  }
 
   ngOnInit(): void {
   }
