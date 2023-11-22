@@ -1,6 +1,7 @@
-export interface Iuser {
-    Id : number
-    Name : string
-    Email : string
+export interface IUser {
+    id : number
+    name : string
+    email : string
     password : string
+
 }

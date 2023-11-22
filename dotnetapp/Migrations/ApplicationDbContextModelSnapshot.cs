@@ -36,6 +36,7 @@ namespace dotnetapp.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Category")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -61,6 +62,7 @@ namespace dotnetapp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeamId"), 1L, 1);
 
                     b.Property<string>("TeamName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TeamId");
